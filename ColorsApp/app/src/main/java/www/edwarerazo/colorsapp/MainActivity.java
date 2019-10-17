@@ -1,13 +1,16 @@
 package www.edwarerazo.colorsapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
@@ -80,5 +83,82 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId ()){
+            case R.id.iteYellow:
+                sbrRed.setProgress (255);
+                sbrGreen.setProgress (255);
+                sbrBlue.setProgress (0);
+                Toast.makeText (this, "Yellow", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteRed:
+                sbrRed.setProgress (255);
+                sbrGreen.setProgress (0);
+                sbrBlue.setProgress (0);
+                Toast.makeText (this, "Red", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteBlue:
+                sbrRed.setProgress (0);
+                sbrGreen.setProgress (0);
+                sbrBlue.setProgress (255);
+                Toast.makeText (this, "Blue", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteBlack:
+                sbrRed.setProgress (0);
+                sbrGreen.setProgress (0);
+                sbrBlue.setProgress (0);
+                Toast.makeText (this, "Black", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteBrown:
+                sbrRed.setProgress (165);
+                sbrGreen.setProgress (42);
+                sbrBlue.setProgress (42);
+                Toast.makeText (this, "Brown", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteCyan:
+                sbrRed.setProgress (0);
+                sbrGreen.setProgress (255);
+                sbrBlue.setProgress (255);
+                Toast.makeText (this, "Cyan", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteGreen:
+                sbrRed.setProgress (0);
+                sbrGreen.setProgress (255);
+                sbrBlue.setProgress (0);
+                Toast.makeText (this, "Green", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteMagenta:
+                sbrRed.setProgress (255);
+                sbrGreen.setProgress (0);
+                sbrBlue.setProgress (255);
+                Toast.makeText (this, "Magenta", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteWhite:
+                sbrRed.setProgress (255);
+                sbrGreen.setProgress (255);
+                sbrBlue.setProgress (255);
+                Toast.makeText (this, "White", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteSemiTransparent:
+                sbrAlpha.setProgress (128);
+                Toast.makeText (this, "SemiTransparent", Toast.LENGTH_SHORT).show ();
+                return true;
+            case R.id.iteTransparent:
+                sbrAlpha.setProgress (0);
+                Toast.makeText (this, "Transparent", Toast.LENGTH_SHORT).show ();
+                return true;
+
+            default:
+                return super.onContextItemSelected (item);
+        }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected (item);
     }
 }
