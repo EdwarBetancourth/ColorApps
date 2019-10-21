@@ -7,8 +7,9 @@
     <string name="white">white</string>
     <string name="yellow">yellow</string>
     <string name="brown">brown</string>
-    <string name="semiTrasnsparent">semiTrasnsparent</string>
-    <string name="Trasnsparent">Trasnsparent</string>
+    <string name="semiTrasnsparent">semiTrasnsparente</string>
+    <string name="Trasnsparent">Trasnsparente</string>
     <string name="Magenta">Magenta</string>
     <string name="Cyan">Cyan</string>
+    <string name="about">About of..</string>
 </resources>
